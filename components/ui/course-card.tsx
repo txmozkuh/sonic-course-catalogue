@@ -11,7 +11,7 @@ interface CourseCardProps {
 
 export default function CourseCard({ title, description, level }: CourseCardProps) {
   return (
-    <div className="bg-gradient-sonic size-full rounded-2xl p-[2px]">
+    <div className="bg-gradient-sonic size-full rounded-2xl p-[2px] transition-all duration-300 hover:-translate-y-[10px] hover:scale-105">
       <div className="bg-card flex size-full flex-col rounded-2xl">
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           <Image
