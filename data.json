@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Introduction to Cryptocurrency",
+    "description": "Learn the basics of what cryptocurrency is, how it works, and why it matters in today’s digital economy.",
+    "level": "Beginner"
+  },
+  {
+    "title": "Setting Up a Crypto Wallet",
+    "description": "Step-by-step guide on creating and managing your first crypto wallet securely.",
+    "level": "Beginner"
+  },
+  {
+    "title": "Blockchain Fundamentals",
+    "description": "Understand how blockchains function, from blocks and hashes to consensus mechanisms.",
+    "level": "Beginner"
+  },
+  {
+    "title": "Smart Contracts with Ethereum",
+    "description": "Learn how to write, deploy, and test your own smart contracts on the Ethereum blockchain.",
+    "level": "Intermidate"
+  },
+  {
+    "title": "NFTs and Digital Collectibles",
+    "description": "Dive into the world of Non-Fungible Tokens, marketplaces, and how digital ownership works.",
+    "level": "Intermidate"
+  },
+  {
+    "title": "DeFi Protocols Deep Dive",
+    "description": "Explore decentralized finance applications such as lending, staking, and liquidity pools.",
+    "level": "Intermidate"
+  },
+  {
+    "title": "Consensus Algorithms Explained",
+    "description": "Detailed study of Proof of Work, Proof of Stake, and next-generation consensus protocols.",
+    "level": "Advanced"
+  },
+  {
+    "title": "Building DApps on Web3",
+    "description": "Learn how to integrate blockchain into web applications and create decentralized apps.",
+    "level": "Advanced"
+  },
+  {
+    "title": "Crypto Security & Auditing",
+    "description": "Master the techniques to secure smart contracts and perform vulnerability assessments.",
+    "level": "Advanced"
+  }
+]
