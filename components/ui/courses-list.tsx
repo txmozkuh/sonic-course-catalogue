@@ -14,7 +14,6 @@ interface CourseListProps {
 
 export default function CourseList({ className, searchParams }: CourseListProps) {
   const [courses, setCourses] = useState<Course[]>([])
-  console.log(searchParams)
   const { search, level, sort } = searchParams
   useEffect(() => {
     const params = new URLSearchParams()
@@ -29,13 +28,19 @@ export default function CourseList({ className, searchParams }: CourseListProps)
 
   return (
     <>
-      {courses.map((item) => {
-        return (
-          <div className={className} key={item.title}>
-            <CourseCard {...item} />
-          </div>
-        )
-      })}
+      {courses.length !== 0 ? (
+        courses.map((item) => {
+          return (
+            <div className={className} key={item.title}>
+              <CourseCard {...item} />
+            </div>
+          )
+        })
+      ) : (
+        <div className="text-muted-foreground col-span-full text-center text-lg">
+          No course available
+        </div>
+      )}
     </>
   )
 }

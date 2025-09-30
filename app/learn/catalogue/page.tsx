@@ -18,7 +18,6 @@ export default function Catalogue() {
   const [search, setSearch] = useState('')
   const [level, setLevel] = useState<CourseLevel[]>([])
   const [sort, setSort] = useState('')
-  console.log(search)
   return (
     <div className="bg-background min-h-screen">
       <div className="relative container flex flex-col items-center gap-8 py-6">
