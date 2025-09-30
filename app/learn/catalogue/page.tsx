@@ -1,9 +1,6 @@
-import CourseCard from '@/components/ui/course-card'
-import React from 'react'
-import coursesData from '@/data.json'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { ChevronsDown, Search } from 'lucide-react'
+'use client'
+import React, { useState } from 'react'
+import { ChevronsDown } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -14,8 +11,14 @@ import {
 import { Separator } from '@/components/ui/separator'
 import FilterPopover from '@/components/ui/filter-popover'
 import SearchBar from '@/components/ui/search-bar'
+import CourseList from '@/components/ui/courses-list'
+import { CourseLevel } from '@/types/data'
 
 export default function Catalogue() {
+  const [search, setSearch] = useState('')
+  const [level, setLevel] = useState<CourseLevel[]>([])
+  const [sort, setSort] = useState('')
+  console.log(search)
   return (
     <div className="bg-background min-h-screen">
       <div className="relative container flex flex-col items-center gap-8 py-6">
@@ -23,36 +26,33 @@ export default function Catalogue() {
         <div className="flex w-full flex-col gap-8">
           {/**Filter bar **/}
           <div className="flex flex-wrap items-center justify-between gap-8">
-            <FilterPopover />
+            <FilterPopover onFilterChange={setLevel} />
             <div className="hidden flex-1 sm:block">
-              <SearchBar />
+              <SearchBar onSearchChange={setSearch} />
             </div>
             <div className="flex items-center gap-1">
               <span className="text-xs font-medium text-white/50">Sort by</span>
-              <Select>
+              <Select value={sort} onValueChange={setSort}>
                 <div className="rounded-md bg-gradient-to-r from-[#edaa60] via-[#bf5f38] to-[#1753b0] p-[1px]">
                   <SelectTrigger className="w-[100px] rounded-[7px] !border-none !bg-black !text-white !ring-0">
-                    <SelectValue placeholder="Unset" />
+                    <SelectValue placeholder="Options" />
                   </SelectTrigger>
                 </div>
                 <SelectContent side="bottom">
-                  <SelectItem value="level">Name</SelectItem>
-                  <SelectItem value="name">Level</SelectItem>
+                  <SelectItem value="title">Title</SelectItem>
+                  <SelectItem value="level">Level</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="w-full sm:hidden">
-              <SearchBar />
+              <SearchBar onSearchChange={setSearch} />
             </div>
           </div>
           <div className="grid w-full grid-cols-12 gap-8">
-            {coursesData.map((item) => {
-              return (
-                <div className="col-span-full sm:col-span-6 lg:col-span-4" key={item.title}>
-                  <CourseCard {...item} />
-                </div>
-              )
-            })}
+            <CourseList
+              className="col-span-full sm:col-span-6 lg:col-span-4"
+              searchParams={{ search, level, sort }}
+            />
           </div>
           <div className="flex w-full items-center justify-center gap-2 overflow-hidden">
             <Separator orientation="horizontal" className="flex-1" />

@@ -1,14 +1,19 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
-export default function SearchBar() {
+interface SearchBarProps {
+  onSearchChange: Dispatch<SetStateAction<string>>
+}
+export default function SearchBar({ onSearchChange }: SearchBarProps) {
   return (
     <div className="flex rounded-full border border-[#506178] p-1">
       <Input
         type="text"
         placeholder="What are you looking for"
+        onChange={(e) => onSearchChange(e.target.value)}
         className="text-foreground rounded-full border-none !bg-transparent text-sm !ring-0 placeholder:text-[#506178]"
       />
       <Button

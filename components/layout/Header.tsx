@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import sonicLogo from '@/public/sonic.svg'
 import GradientBtn from '@components/ui/gradient-btn'
-import { Home } from 'lucide-react'
 
 export default function Header() {
   return (
@@ -12,7 +11,7 @@ export default function Header() {
         <Link href={'/'} className="flex items-center">
           <Image src={sonicLogo} alt="sonic-logo" className="h-8 w-32" />
         </Link>
-        <GradientBtn title="Sonic" shadow icon={<Home className="size-3 stroke-[1.5px]" />} />
+        <GradientBtn title="Sonic" shadow className="font-light" />
       </nav>
     </header>
   )

@@ -16,7 +16,7 @@ export default function GradientBtn({ title, icon, shadow, className }: Gradient
         />
       )}
       <div className="bg-gradient-sonic-mirrored animate-gradient relative z-10 overflow-hidden rounded-full p-[1px]">
-        <div className="flex size-full items-center justify-center gap-1 rounded-full bg-black/85 px-3 py-1 text-base font-semibold">
+        <div className="flex size-full items-center justify-center gap-1 rounded-full bg-black/85 px-3 py-1 text-base font-light">
           {title}
           {icon}
         </div>

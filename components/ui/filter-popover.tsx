@@ -3,9 +3,12 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import { CourseLevel } from '@/types/data'
 import { Filter } from 'lucide-react'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
-export default function FilterPopover() {
+interface FilterPopoverProps {
+  onFilterChange: Dispatch<SetStateAction<CourseLevel[]>>
+}
+export default function FilterPopover({ onFilterChange }: FilterPopoverProps) {
   return (
     <Popover>
       <div className="rounded-md bg-gradient-to-r from-[#edaa60] via-[#bf5f38] to-[#1753b0] p-[1px]">
@@ -24,6 +27,7 @@ export default function FilterPopover() {
           <div className="flex flex-col gap-2">
             <h3 className="font-medium">Level</h3>
             <ToggleGroup
+              onValueChange={(e) => onFilterChange(e as CourseLevel[])}
               variant="outline"
               type="multiple"
               className="bg-gradient-to-r from-[#edaa60] via-[#bf5f38] to-[#1753b0]"
