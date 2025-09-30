@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 📚 A Blockchain & Crypto Course Catalogue by Sonic
 
-## Getting Started
 
-First, run the development server:
+
+Welcome to the Blockchain & Crypto Course Catalogue — your one-stop destination to explore, learn, and grow in the rapidly evolving world of decentralized technologies.
+
+Our catalogue offers a curated selection of courses ranging from beginner-friendly introductions to advanced deep dives into blockchain development, cryptocurrency markets, smart contracts, and decentralized applications (dApps). Whether you’re a student, developer, investor, or enthusiast, you’ll find resources tailored to your level.
+## Demo
+
+https://sonic-course-catalogue.vercel.app
+
+### Figma design
+https://www.figma.com/design/YNXdW6ubbCvWSHfInQ2pQ6/Daeva---Sonic-task?node-id=4603-2394&t=hzq9KNWn6WRwMtQh-1
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/txmozkuh/sonic-course-catalogue.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd sonic-course-catalogue
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open your browser with URL: 
+```bash
+- Local:        http://localhost:3000
+- Network:      http://192.168.1.10:3000
+```
