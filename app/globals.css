@@ -122,8 +122,20 @@
     overscroll-behavior-y: none;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground relative;
   }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #4f46e5, #ec4899);
+  }
+}
+
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
 }
 
 .container {

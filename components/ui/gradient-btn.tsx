@@ -1,34 +1,29 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react'
 
 interface GradientBtnProps {
-  title: string;
-  icon?: ReactNode;
-  shadow?: boolean;
-  className?: string;
+  title: string
+  icon?: ReactNode
+  shadow?: boolean
+  className?: string
 }
 
-export default function GradientBtn({
-  title,
-  icon,
-  shadow,
-  className,
-}: GradientBtnProps) {
+export default function GradientBtn({ title, icon, shadow, className }: GradientBtnProps) {
   return (
-    <button className={`relative inline-block group text-sm ${className}`}>
+    <button className={`group relative inline-block text-sm ${className}`}>
       {shadow && (
         <div
-          className={`absolute inset-0 bg-gradient-sonic-mirrored animate-gradient rounded-full blur-sm group-hover:blur group-hover:brightness-125 transition`}
+          className={`bg-gradient-sonic-mirrored animate-gradient absolute inset-0 rounded-full blur-sm transition group-hover:blur group-hover:brightness-125`}
         />
       )}
-      <div className="bg-gradient-sonic-mirrored animate-gradient z-10 p-[1px] rounded-full relative overflow-hidden">
-        <div className="size-full bg-black/85 px-3 py-1 rounded-full flex justify-center items-center gap-1">
+      <div className="bg-gradient-sonic-mirrored animate-gradient relative z-10 overflow-hidden rounded-full p-[1px]">
+        <div className="flex size-full items-center justify-center gap-1 rounded-full bg-black/85 px-3 py-1 text-base font-semibold">
           {title}
           {icon}
         </div>
-        <div className="-skew-x-12 group pointer-events-none via-white/20 absolute inset-0 z-20">
-          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full transition duration-500 group-hover:-translate-x-full"></div>
+        <div className="group pointer-events-none absolute inset-0 z-20 -skew-x-12 via-white/20">
+          <div className="h-full w-full translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-500 group-hover:-translate-x-full"></div>
         </div>
       </div>
     </button>
-  );
+  )
 }
