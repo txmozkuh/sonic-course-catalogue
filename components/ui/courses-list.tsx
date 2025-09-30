@@ -18,7 +18,7 @@ export default function CourseList({ className, searchParams }: CourseListProps)
   useEffect(() => {
     const params = new URLSearchParams()
     if (search) params.append('search', search)
-    if (level) params.append('level', level)
+    if (level) params.append('level', level.join(','))
     if (sort) params.append('sort', sort)
 
     fetch(`/api/courses?${params.toString()}`)
